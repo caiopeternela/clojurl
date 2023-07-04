@@ -1,10 +1,11 @@
 (ns url-shortener.datomicadapter
-  (:require [datomic.client.api :as d]))
+  (:require [url-shortener.env :as env]
+            [datomic.client.api :as d]))
 
 (def cfg {:server-type :cloud
           :region "us-east-1"
           :system "datomic-url-shortener"
-          :endpoint "https://fe8gqooi4i.execute-api.us-east-1.amazonaws.com"
+          :endpoint env/datomic-endpoint
           :creds-profile "default"})
 
 (def client (d/client cfg))
@@ -45,7 +46,7 @@
 
 (comment
   (def first-url [{:url/hash "abcdefgh"
-                   :url/long "http://this.is.a.long.url.com/yes-it-is"}]))
+                   :url/long "https://www.unifesp.br/campus/sjc/bct"}]))
 
 (comment
   (d/transact conn {:tx-data first-url}))

@@ -9,7 +9,7 @@
    (ring/router
     ["/"
      ["shorten" {:post c/shorten-url}]
-     ["go/:hash-id" {:get c/redirect-to-original}]
+     ["redirect/:hash-id" {:get c/redirect-to-original}]
      ["" {:get c/string-handler}]]
     {:data {:muuntaja m/instance
             :middleware [muuntaja/format-middleware]}})))
