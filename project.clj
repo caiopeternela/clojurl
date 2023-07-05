@@ -1,5 +1,5 @@
 (defproject url-shortener "0.1.0-SNAPSHOT"
-  :description "Clojure URL shortener using Datomic Cloud"
+  :description "Clojure & Datomic URL shortener"
   :url "https://github.com/caiopeternela/clojurl"
   :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
             :url "https://www.eclipse.org/legal/epl-2.0/"}

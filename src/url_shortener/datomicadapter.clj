@@ -3,10 +3,10 @@
             [datomic.client.api :as d]))
 
 (def cfg {:server-type :cloud
-          :region "us-east-1"
-          :system "datomic-url-shortener"
+          :region env/region
+          :system env/system-name
           :endpoint env/datomic-endpoint
-          :creds-profile "default"})
+          :creds-profile env/creds-profile})
 
 (def client (d/client cfg))
 
@@ -45,7 +45,7 @@
   (d/transact conn {:tx-data url-schema}))
 
 (comment
-  (def first-url [{:url/hash "abcdefgh"
+  (def first-url [{:url/hash "abc123"
                    :url/long "https://www.unifesp.br/campus/sjc/bct"}]))
 
 (comment
