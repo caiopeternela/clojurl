@@ -11,6 +11,6 @@
     {:status 301
      :headers {"Location" original-url}}))
 
-(defn string-handler [_]
+(defn string-handler []
   {:status 200
    :body "URL shortener"})

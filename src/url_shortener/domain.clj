@@ -1,15 +1,13 @@
 (ns url-shortener.domain
   (:require [clojure.set :as set]))
 
-(defn reverse-str
-  [my-str]
+(defn reverse-str [my-str]
   (apply str (reverse my-str)))
 
 (defn gen-id []
   (rand-int 350000000))
 
-(defn hash-id
-  [n]
+(defn hash-id [n]
   (let [symbolmap (zipmap (concat
                            (map char (range 48 58))
                            (map char (range 97 123))
