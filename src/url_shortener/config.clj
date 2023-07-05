@@ -3,7 +3,7 @@
             [url-shortener.datomicadapter :as da]))
 
 (defn hash-url-and-save [url]
-  (uc/hash-url-and-save da/save-to-datomic url))
+  (uc/hash-url-and-save da/save-to-db url))
 
 (defn get-original-url [url]
-  (uc/get-original-url da/get-from-datomic url))
+  (uc/get-original-url da/get-from-db url))

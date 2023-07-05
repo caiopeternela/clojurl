@@ -10,6 +10,6 @@
     ["/"
      ["shorten" {:post c/shorten-url}]
      ["redirect/:hash-id" {:get c/redirect-to-original}]
-     ["" {:get c/string-handler}]]
+     ["" {:get c/homepage}]]
     {:data {:muuntaja m/instance
             :middleware [muuntaja/format-middleware]}})))

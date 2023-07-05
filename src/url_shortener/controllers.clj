@@ -9,8 +9,8 @@
 (defn redirect-to-original [{{:keys [hash-id]} :path-params}]
   (let [original-url (cfg/get-original-url hash-id)]
     {:status 301
-     :headers {"Location" original-url}}))
+     :headers {"Original" original-url}}))
 
-(defn string-handler []
+(defn homepage []
   {:status 200
-   :body "URL shortener"})
+   :body "Clojurl - Clojure & Datomic URL shortener"})

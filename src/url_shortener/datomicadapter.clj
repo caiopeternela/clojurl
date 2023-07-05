@@ -14,11 +14,11 @@
 
 (def db (d/db conn))
 
-(defn save-to-datomic [key value]
+(defn save-to-db [key value]
   (d/transact conn {:tx-data [{:url/hash key
                                :url/long value}]}))
 
-(defn get-from-datomic [key]
+(defn get-from-db [key]
   (let [db (d/db conn)]
   (->> (d/q '[:find (pull ?e [:url/long])
               :in $ ?hash
